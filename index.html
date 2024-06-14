@@ -1,51 +1,124 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-     <meta charset="utf-8">
-     <title>Babylon</title>
-     <link rel="stylesheet" href="css\styles.css">
-     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-     <link rel="shortcut icon" href="images\favicon.ico" type="image/x-icon">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dmitry Pimkin</title>
+     <style>
+          body {
+               font-family: Arial, sans-serif;
+               margin: 0;
+               padding: 0;
+               background-color: #f2f2f2;
+          }
+
+          main {
+               max-width: 100%;
+               margin: 20px auto;
+               padding: 20px;
+               background-color: #fff;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+
+          .video-grid {
+               display: grid;
+               grid-template-columns: repeat(3, 1fr);
+               grid-gap: 10px;
+          }
+
+          .video-container {
+               position: relative;
+               padding-bottom: 56.25%;
+               height: 0;
+               overflow: hidden;
+          }
+
+          .video-container p {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               font-size: 18px;
+               font-weight: bold;
+          }
+
+          @media (max-width: 768px) {
+               .video-grid {
+                    grid-template-columns: repeat(2, 1fr);
+               }
+          }
+
+          @media (max-width: 480px) {
+               .video-grid {
+                    grid-template-columns: 1fr;
+               }
+          }
+     </style>
 </head>
 
 <body>
+     <main>
+          <h2>Dmitry Pimkin</h2>
+          <p>I am a creative professional with a passion for design and visual storytelling.</p>
 
-     <h4 style="font-size:24px; text-align: center; color: #999999; margin-top: 16px; margin-bottom: 8px;">Babylon</h4>
-
-     <div class="center">
-
-          <div class="btn-group">
-               <button class="button" onclick=" window.open('/index.html','_blank')" class="tooltiptext">← Home
-                    Page</button>
+          <div class="video-grid">
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
+               <div class="video-container">
+                    <p>
+                    <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe
+                              src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
+                              allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+                              frameborder="0" allowfullscreen
+                              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+                    </p>
+               </div>
           </div>
-
-          <div class="btn-group">
-               <button class="button" onclick=" window.open('/redesign.html','_blank')"
-                    class="tooltiptext">ReDesign</button>
-          </div>
-
-          <div class="btn-group">
-               <button class="button" onclick=" window.open('/environments.html','_blank')"
-                    class="tooltiptext">Environments</button>
-               <button class="button" onclick=" window.open('/animations.html','_blank')"
-                    class="tooltiptext">Animations</button>
-               <button class="button" onclick=" window.open('/prototypes.html','_blank')"
-                    class="tooltiptext">Prototype</button>
-          </div>
-
-          <div class="btn-group">
-               <button class="button" onclick=" window.open('/rnd.html','_blank')" class="tooltiptext">RnD</button>
-          </div>
-
-
-          <iframe src="https://kinescope.io/embed/aU9BVL6Kr3NyrG6i8dLjUq"
-               allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
-               frameborder="0" allowfullscreen width="960" height="540"></iframe>
-
-
-
-
+     </main>
 </body>
 
 </html>
