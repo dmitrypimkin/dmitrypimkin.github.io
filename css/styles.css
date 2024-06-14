@@ -1,14 +1,67 @@
+/* styles.css */
+
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+
+
+h1 {
+  font-size: 2em;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em; /* Уменьшение размера шрифта на маленьких экранах */
+  }
+}
+
+p {
+  margin: 4px 0;
+  font-weight: 300; /* Regular */
+  letter-spacing: 1.5px;
+  color: #cccccc;
+}
+
+
+@media (max-width: 768px) {
+  p {
+    letter-spacing: 0.5px; /* Уменьшение кернинга для параграфов на маленьких экранах */
+  }
+}
+
 .video-container {
   position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
   width: 100%;
-  height: var(--video-height);
   overflow: hidden;
 }
 
-.video-container video {
+.video-wrapper {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -16,17 +69,17 @@
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .video-grid {
     grid-template-columns: 1fr;
   }

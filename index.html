@@ -1,151 +1,114 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Dmitry Pimkin</title>
-     <script src="script.js"></script>
+     <title>Dmitry Pimkin's Portfolio</title>
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-     <style>
-          body {
-               margin: 0;
-               padding: 0;
-               background-color: #f2f2f2;
-          }
-
-          main {
-               max-width: 100%;
-               margin: 20px auto;
-               padding: 20px;
-               background-color: #fff;
-               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          }
-
-          .video-grid {
-               display: grid;
-               grid-template-columns: repeat(3, 1fr);
-               grid-gap: 10px;
-          }
-
-          .video-container {
-               position: relative;
-               padding-bottom: 56.25%;
-               height: 0;
-               overflow: hidden;
-          }
-
-          .video-container p {
-               position: absolute;
-               top: 50%;
-               left: 50%;
-               transform: translate(-50%, -50%);
-               font-size: 18px;
-               font-weight: bold;
-          }
-
-          @media (max-width: 768px) {
-               .video-grid {
-                    grid-template-columns: repeat(2, 1fr);
-               }
-          }
-
-          @media (max-width: 480px) {
-               .video-grid {
-                    grid-template-columns: 1fr;
-               }
-          }
-     </style>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-     <main>
-          <p>Dmitry Pimkin</p>
-          <h1>Creative professional with a passion for design and visual storytelling</h1>
-          
+     <header>
+          <h1>Dmitry Pimkin: Motion Design Storyteller</h1>
+          <p>Crafting Captivating Visual Narratives through Motion Graphics</p>
+     </header>
 
+     <main>
           <div class="video-grid">
                <div class="video-container">
-                    <p>
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
-                    </p>
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
+                    </div>
+               </div>
+               <!-- Repeat .video-container for the remaining videos -->
+               <div class="video-container">
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
+                    </div>
                </div>
                <div class="video-container">
-                    <p>
-                    <div class="video-container">
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
                     </div>
-                    </p>
                </div>
                <div class="video-container">
-                    <p>
-                    <div class="video-container">
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
                     </div>
-                    </p>
                </div>
                <div class="video-container">
-                    <p>
-                    <div class="video-container">
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
                     </div>
-                    </p>
                </div>
                <div class="video-container">
-                    <p>
-                    <div class="video-container">
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
+                    <div class="video-wrapper">
+                         <video autoplay loop muted playsinline>
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(min-width: 768px)">
+                              <source
+                                   src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4"
+                                   type="video/mp4" media="(max-width: 767px)">
+                              <img src="images/preview.jpg" alt="Video Preview">
+                         </video>
                     </div>
-                    </p>
-               </div>
-               <div class="video-container">
-                    <p>
-                    <div class="video-container">
-                         <div class="video-container">
-                              <video autoplay loop muted playsinline>
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(min-width: 768px)">
-                                <source src="https://cdn.dribbble.com/userupload/15111109/file/original-a66714bf3c865b09a5b3f1c914a669a7.mp4" type="video/mp4" media="(max-width: 767px)">
-                                <img src="images/preview.jpg" alt="Video Preview">
-                              </video>
-                            </div>
-                    </div>
-                    </p>
                </div>
           </div>
      </main>
+
+     <footer>
+          <p>&copy; 2024 Dmitry Pimkin. All rights reserved.</p>
+     </footer>
+
+     <script>
+          // Additional JavaScript code, if needed
+     </script>
 </body>
 
 </html>
