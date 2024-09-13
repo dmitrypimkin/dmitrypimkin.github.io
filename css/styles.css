@@ -1,86 +1,142 @@
-/* styles.css */
-
-
+/* Основные стили для темной темы */
 body {
-  font-family: 'Noto Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6
+    ;
+    color: #f0f0f0;
+    background-color: #121212;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    scrollbar-color: #1e1e1e #111111;
+    scrollbar-width: auto;
 }
 
-header, footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+/* Стили для контейнера */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0;
 }
 
-main {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 4px;
-}
-
-
-
-h1 {
-  font-size: 2em;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.5em; /* Уменьшение размера шрифта на маленьких экранах */
-  }
-}
-
-p {
-  margin: 4px 0;
-  font-weight: 300; /* Regular */
-  letter-spacing: 1.5px;
-  color: #cccccc;
+/* Стили для информационного блока слева */
+.info-block {
+    flex: 0 0 300px;
+    padding-right: 20px;
+    overflow-y: auto;
+    height: calc(100vh);
+    padding-top: 10px;
 }
 
 
-@media (max-width: 768px) {
-  p {
-    letter-spacing: 0.5px; /* Уменьшение кернинга для параграфов на маленьких экранах */
-  }
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #dddddd;
 }
 
-.video-container {
-  position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  width: 100%;
-  overflow: hidden;
+header p {
+    margin: 0% 0 0;
+    font-size: 1.4em;
+    color: #a0a0a0;
 }
 
-.video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Стили для секций */
+section {
+    margin-bottom: 30px;
 }
 
-.video-wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+h2 {
+    color: #cccccc;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4px;
+/* Стили для списка навыков */
+.skills ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-@media (max-width: 1200px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.skills li {
+    margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
+
+/* Стили для контактной информации */
+.contact a {
+    color: #2787FA;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для портфолио (правая колонка) */
+.portfolio {
+    flex: 1;
+    overflow-y: auto;
+    height: calc(100vh);
+    padding-top: 10px;
+}
+
+/* Стили для списка видео */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Стили для отдельных элементов видео */
+.video-item {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-item h3 {
+    margin: 15px 15px 5px;
+    color: #cccccc;
+}
+
+.video-item p {
+    margin: 0 15px 15px;
+    font-size: 1em;
+    color: #a0a0a0;
+}
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .info-block, .portfolio {
+        flex: none;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .info-block {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
 }
