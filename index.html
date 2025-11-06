@@ -1,139 +1,1065 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dmitrii Pimkin - Motion Designer Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Dmitrii Pimkin, a Motion Designer with 5+ years of experience in 2D/3D animation, motion graphics, and product design.">
+    <meta name="description" content="Portfolio of Dmitrii Pimkin, a Motion Designer with 5+ years of experience in 2D/3D animation, motion graphics, and product design.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+        ym(98334525,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/98334525" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        ym(98334525, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar header h1 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .sidebar header p {
+            font-size: 1.1em;
+            color: #999;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin-bottom: auto;
+        }
+
+        .nav-menu li {
+            margin-bottom: 20px;
+        }
+
+        .nav-menu a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #2787FA;
+        }
+
+        .contact {
+            margin-top: auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact h2 {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .contact img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .contact img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 60px 80px;
+            max-width: 1400px;
+        }
+
+        /* Section Styling */
+        section {
+            min-height: auto;
+            padding: 40px 0;
+            scroll-margin-top: 0;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+        }
+
+        /* Showreel Section */
+        .showreel-container {
+            position: relative;
+            max-width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+        }
+
+        .showreel-container video,
+        #flash .video-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            padding: 15px 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .showreel-container:hover .video-controls,
+        #flash .video-item:hover .video-controls {
+            opacity: 1;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #2787FA;
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            transition: opacity 0.2s;
+        }
+
+        .control-btn:hover {
+            opacity: 0.7;
+        }
+
+        .control-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #2787FA;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            background: #2787FA;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .time-display {
+            color: #fff;
+            font-size: 0.85em;
+            margin-left: auto;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .play-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .play-overlay::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #fff;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        /* 3D Section */
+        .grid-3d {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .model-container {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .model-container canvas {
+            width: 100%;
+            height: 500px;
+            display: block;
+            cursor: grab;
+        }
+
+        .model-container canvas:active {
+            cursor: grabbing;
+        }
+
+        .model-container h3 {
+            padding: 20px;
+            font-size: 1.3em;
+            color: #ccc;
+            text-align: center;
+            background: rgba(20, 20, 20, 0.9);
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #2787FA;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .video-item {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        /* Loop & AI - большой размер */
+        #loop .video-item,
+        #ai .video-item {
+            flex: 1 1 calc(50% - 15px);
+            min-width: 400px;
+            max-width: 600px;
+        }
+
+        /* Flash - маленький размер с overlay */
+        #flash .video-item {
+            flex: 0 1 300px;
+            max-width: 300px;
+            position: relative;
+        }
+
+        #flash .video-item video {
+            cursor: pointer;
+        }
+
+        #flash .play-overlay-flash {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        #flash .play-overlay-flash.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #flash .play-overlay-flash::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 15px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 3px;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Mobile Menu */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 20, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            z-index: 1001;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .burger {
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .burger span {
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .burger.active span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 20, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            z-index: 1000;
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-header {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 100px 40px 60px;
+            }
+
+            .grid-3d {
+                grid-template-columns: 1fr;
+            }
+
+            #loop .video-item,
+            #ai .video-item {
+                flex: 1 1 100%;
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            #flash .video-item {
+                flex: 0 1 250px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #loop .video-item,
+            #ai .video-item,
+            #flash .video-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 100px 20px 40px;
+            }
+
+            section h2 {
+                font-size: 1.6em;
+            }
+
+            .model-container canvas {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar">
+        <header>
+            <h1>Dmitrii Pimkin</h1>
+            <p>Designer · UI · 3D · Motion</p>
+        </header>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#showreel" class="nav-link">Showreel</a></li>
+                <li><a href="#3d" class="nav-link">3D Interactive</a></li>
+                <li><a href="#loop" class="nav-link">Loop Animations</a></li>
+                <li><a href="#ai" class="nav-link">AI Experiments</a></li>
+                <li><a href="#flash" class="nav-link">Flash Banners</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact">
+            <h2>Contact</h2>
+            <a href="https://www.linkedin.com/in/dmitriipimkin/" target="_blank">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:pimkind@gmail.com">
+                <img src="assets/email.svg" alt="Email">
+            </a>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <div>
+                <h1 style="font-size: 1.4em; color: #fff;">Dmitrii Pimkin</h1>
+                <p style="font-size: 0.9em; color: #999; margin-top: 2px;">Designer · UI · 3D · Motion</p>
+            </div>
+            <div class="burger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="#showreel" class="nav-link" onclick="closeMobileMenu()">Showreel</a></li>
+            <li><a href="#3d" class="nav-link" onclick="closeMobileMenu()">3D Interactive</a></li>
+            <li><a href="#loop" class="nav-link" onclick="closeMobileMenu()">Loop Animations</a></li>
+            <li><a href="#ai" class="nav-link" onclick="closeMobileMenu()">AI Experiments</a></li>
+            <li><a href="#flash" class="nav-link" onclick="closeMobileMenu()">Flash Banners</a></li>
+        </ul>
+        <div class="contact" style="margin-top: 30px;">
+            <h2>Contact</h2>
+            <a href="https://www.linkedin.com/in/dmitriipimkin/" target="_blank">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:pimkind@gmail.com">
+                <img src="assets/email.svg" alt="Email">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Showreel Section -->
+        <section id="showreel">
+            <h2>Showreel</h2>
+            <div class="showreel-container">
+                <video id="showreelVideo" poster="images/showreel.webp" preload="metadata">
+                    <source src="videos/showreel.webm" type="video/webm">
+                    <source src="videos/showreel.mp4" type="video/mp4">
+                </video>
+                <div class="play-overlay" id="playOverlay"></div>
+                <div class="video-controls" id="showreelControls">
+                    <div class="progress-bar" id="showreelProgress">
+                        <div class="progress-bar-fill" id="showreelProgressFill"></div>
+                    </div>
+                    <div class="controls-row">
+                        <button class="control-btn" id="showreelMuteBtn">
+                            <svg viewBox="0 0 24 24" id="showreelVolumeIcon">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                            </svg>
+                        </button>
+                        <div class="volume-control">
+                            <input type="range" min="0" max="100" value="100" class="volume-slider" id="showreelVolumeSlider">
+                        </div>
+                        <span class="time-display" id="showreelTime">0:00 / 0:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Interactive Section -->
+        <section id="3d">
+            <h2>3D Interactive</h2>
+            <div class="grid-3d">
+                <div class="model-container">
+                    <div class="loader" id="loader1"></div>
+                    <canvas id="canvas1"></canvas>
+                    <h3>Camera</h3>
+                </div>
+                <div class="model-container">
+                    <div class="loader" id="loader2"></div>
+                    <canvas id="canvas2"></canvas>
+                    <h3>Halloween</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loop Animations Section -->
+        <section id="loop">
+            <h2>Loop Animations</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video loop muted autoplay playsinline poster="images/slice.webp">
+                        <source src="videos/slice.webm" type="video/webm">
+                        <source src="videos/slice.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video loop muted autoplay playsinline poster="images/switch.webp">
+                        <source src="videos/switch.webm" type="video/webm">
+                        <source src="videos/switch.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Experiments Section -->
+        <section id="ai">
+            <h2>AI Experiments</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video loop muted autoplay playsinline poster="images/morph.webp">
+                        <source src="videos/morph.webm" type="video/webm">
+                        <source src="videos/morph.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video loop muted autoplay playsinline poster="images/sisyfus.webp">
+                        <source src="videos/sisyfus.webm" type="video/webm">
+                        <source src="videos/sisyfus.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video loop muted autoplay playsinline poster="images/gallery.webp">
+                        <source src="videos/gallery.webm" type="video/webm">
+                        <source src="videos/gallery.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Banners Section -->
+        <section id="flash">
+            <h2>Flash Banners from Previous Life</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video id="flashVideo" loop poster="images/flash.webp" preload="metadata">
+                        <source src="videos/flash.webm" type="video/webm">
+                        <source src="videos/flash.mp4" type="video/mp4">
+                    </video>
+                    <div class="play-overlay-flash" id="playOverlayFlash"></div>
+                    <div class="video-controls" id="flashControls">
+                        <div class="progress-bar" id="flashProgress">
+                            <div class="progress-bar-fill" id="flashProgressFill"></div>
+                        </div>
+                        <div class="controls-row">
+                            <button class="control-btn" id="flashMuteBtn">
+                                <svg viewBox="0 0 24 24" id="flashVolumeIcon">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                                </svg>
+                            </button>
+                            <div class="volume-control">
+                                <input type="range" min="0" max="100" value="100" class="volume-slider" id="flashVolumeSlider">
+                            </div>
+                            <span class="time-display" id="flashTime">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const burger = document.querySelector('.burger');
+            const menu = document.querySelector('.mobile-menu');
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            document.querySelector('.burger').classList.remove('active');
+            document.querySelector('.mobile-menu').classList.remove('active');
+        }
+
+        // Showreel Video Control
+        const showreelVideo = document.getElementById('showreelVideo');
+        const playOverlay = document.getElementById('playOverlay');
+        const showreelContainer = document.querySelector('.showreel-container');
+        const showreelProgress = document.getElementById('showreelProgress');
+        const showreelProgressFill = document.getElementById('showreelProgressFill');
+        const showreelMuteBtn = document.getElementById('showreelMuteBtn');
+        const showreelVolumeSlider = document.getElementById('showreelVolumeSlider');
+        const showreelVolumeIcon = document.getElementById('showreelVolumeIcon');
+        const showreelTime = document.getElementById('showreelTime');
+
+        // Play/Pause
+        showreelContainer.addEventListener('click', function(e) {
+            if (e.target.closest('.video-controls')) return;
+            if (showreelVideo.paused) {
+                showreelVideo.play();
+                playOverlay.classList.add('hidden');
+                ym(98334525, 'reachGoal', 'showreel_play');
+            } else {
+                showreelVideo.pause();
+                playOverlay.classList.remove('hidden');
+            }
+        });
+
+        // Progress bar update
+        showreelVideo.addEventListener('timeupdate', function() {
+            const percent = (showreelVideo.currentTime / showreelVideo.duration) * 100;
+            showreelProgressFill.style.width = percent + '%';
+            showreelTime.textContent = formatTime(showreelVideo.currentTime) + ' / ' + formatTime(showreelVideo.duration);
+        });
+
+        // Progress bar click
+        showreelProgress.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const rect = this.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            showreelVideo.currentTime = percent * showreelVideo.duration;
+        });
+
+        // Mute button
+        showreelMuteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showreelVideo.muted = !showreelVideo.muted;
+            updateVolumeIcon(showreelVideo, showreelVolumeIcon);
+            showreelVolumeSlider.value = showreelVideo.muted ? 0 : showreelVideo.volume * 100;
+        });
+
+        // Volume slider
+        showreelVolumeSlider.addEventListener('input', function(e) {
+            e.stopPropagation();
+            showreelVideo.volume = this.value / 100;
+            showreelVideo.muted = this.value == 0;
+            updateVolumeIcon(showreelVideo, showreelVolumeIcon);
+        });
+
+        showreelVideo.addEventListener('ended', function() {
+            playOverlay.classList.remove('hidden');
+            ym(98334525, 'reachGoal', 'showreel_complete');
+        });
+
+        // Flash Video Control
+        const flashVideo = document.getElementById('flashVideo');
+        const playOverlayFlash = document.getElementById('playOverlayFlash');
+        const flashContainer = flashVideo.parentElement;
+        const flashProgress = document.getElementById('flashProgress');
+        const flashProgressFill = document.getElementById('flashProgressFill');
+        const flashMuteBtn = document.getElementById('flashMuteBtn');
+        const flashVolumeSlider = document.getElementById('flashVolumeSlider');
+        const flashVolumeIcon = document.getElementById('flashVolumeIcon');
+        const flashTime = document.getElementById('flashTime');
+
+        // Play/Pause
+        flashContainer.addEventListener('click', function(e) {
+            if (e.target.closest('.video-controls')) return;
+            if (flashVideo.paused) {
+                flashVideo.play();
+                playOverlayFlash.classList.add('hidden');
+                ym(98334525, 'reachGoal', 'flash_play');
+            } else {
+                flashVideo.pause();
+                playOverlayFlash.classList.remove('hidden');
+            }
+        });
+
+        // Progress bar update
+        flashVideo.addEventListener('timeupdate', function() {
+            const percent = (flashVideo.currentTime / flashVideo.duration) * 100;
+            flashProgressFill.style.width = percent + '%';
+            flashTime.textContent = formatTime(flashVideo.currentTime) + ' / ' + formatTime(flashVideo.duration);
+        });
+
+        // Progress bar click
+        flashProgress.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const rect = this.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            flashVideo.currentTime = percent * flashVideo.duration;
+        });
+
+        // Mute button
+        flashMuteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            flashVideo.muted = !flashVideo.muted;
+            updateVolumeIcon(flashVideo, flashVolumeIcon);
+            flashVolumeSlider.value = flashVideo.muted ? 0 : flashVideo.volume * 100;
+        });
+
+        // Volume slider
+        flashVolumeSlider.addEventListener('input', function(e) {
+            e.stopPropagation();
+            flashVideo.volume = this.value / 100;
+            flashVideo.muted = this.value == 0;
+            updateVolumeIcon(flashVideo, flashVolumeIcon);
+        });
+
+        flashVideo.addEventListener('ended', function() {
+            playOverlayFlash.classList.remove('hidden');
+            ym(98334525, 'reachGoal', 'flash_complete');
+        });
+
+        // Helper functions
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+
+        function updateVolumeIcon(video, icon) {
+            if (video.muted || video.volume === 0) {
+                icon.innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+            } else if (video.volume < 0.5) {
+                icon.innerHTML = '<path d="M7 9v6h4l5 5V4l-5 5H7z"/>';
+            } else {
+                icon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>';
+            }
+        }
+
+        // Smooth Scroll & Active Nav
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                ym(98334525, 'reachGoal', 'nav_click_' + targetId.substring(1));
+            });
+        });
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+
+        // 3D Models with Three.js
+        function init3DModel(canvasId, modelPath, withEnvironment, loaderId) {
+            const canvas = document.getElementById(canvasId);
+            const loader = document.getElementById(loaderId);
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a1a);
+
+            const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            camera.position.set(0, 0, 5);
+
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.outputEncoding = THREE.sRGBEncoding;
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1;
+
+            // Lighting
+            if (withEnvironment) {
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                scene.add(ambientLight);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                directionalLight.position.set(5, 5, 5);
+                scene.add(directionalLight);
+            }
+
+            let model;
+            let isDragging = false;
+            let previousMouseX = 0;
+            let rotationVelocity = 0;
+            const autoRotationSpeed = 0.01; // 36 degrees/sec = ~0.628 rad/sec = 0.01 rad/frame at 60fps
+
+            // Load GLB Model
+            const gltfLoader = new THREE.GLTFLoader();
+            gltfLoader.load(
+                modelPath,
+                function(gltf) {
+                    model = gltf.scene;
+                    
+                    // Center and scale model
+                    const box = new THREE.Box3().setFromObject(model);
+                    const center = box.getCenter(new THREE.Vector3());
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    const scale = 3 / maxDim;
+                    model.scale.multiplyScalar(scale);
+                    model.position.sub(center.multiplyScalar(scale));
+                    
+                    scene.add(model);
+                    loader.style.display = 'none';
+                    ym(98334525, 'reachGoal', '3d_model_loaded_' + canvasId);
+                },
+                function(xhr) {
+                    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+                },
+                function(error) {
+                    console.error('Error loading model:', error);
+                    loader.innerHTML = 'Error loading model';
+                }
+            );
+
+            // Mouse/Touch Controls
+            canvas.addEventListener('mousedown', onPointerDown);
+            canvas.addEventListener('touchstart', onPointerDown);
+            
+            function onPointerDown(e) {
+                isDragging = true;
+                previousMouseX = e.clientX || e.touches[0].clientX;
+                rotationVelocity = 0;
+            }
+
+            window.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('touchmove', onPointerMove);
+            
+            function onPointerMove(e) {
+                if (!isDragging || !model) return;
+                const clientX = e.clientX || e.touches[0].clientX;
+                const deltaX = clientX - previousMouseX;
+                rotationVelocity = deltaX * 0.01;
+                model.rotation.y += rotationVelocity;
+                previousMouseX = clientX;
+            }
+
+            window.addEventListener('mouseup', onPointerUp);
+            window.addEventListener('touchend', onPointerUp);
+            
+            function onPointerUp() {
+                isDragging = false;
+            }
+
+            // Animation Loop
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                if (model) {
+                    if (!isDragging) {
+                        // Auto rotation when not dragging
+                        model.rotation.y += autoRotationSpeed;
+                        // Damping for smooth stop after drag
+                        rotationVelocity *= 0.95;
+                        if (Math.abs(rotationVelocity) > 0.001) {
+                            model.rotation.y += rotationVelocity;
+                        }
+                    }
+                }
+                
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Responsive
+            window.addEventListener('resize', function() {
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            });
+        }
+
+        // Lazy Load 3D Models
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.id === '3d') {
+                    init3DModel('canvas1', '3d/camera.glb', true, 'loader1');
+                    init3DModel('canvas2', '3d/halloween.glb', false, 'loader2');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(document.getElementById('3d'));
+
+        // Video Analytics
+        document.querySelectorAll('.video-item video').forEach((video, index) => {
+            video.addEventListener('play', function() {
+                const section = this.closest('section').id;
+                ym(98334525, 'reachGoal', 'video_play_' + section + '_' + index);
+            });
         });
     </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/98334525" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-    <meta name="google-site-verification" content="gsFbOlBPFv6WRul76N-e7-O73ef_ziAtR0QPsj1oGS0" />
-
-</head>
-
-<body>
-
-    <div class="container">
-        <aside class="info-block">
-            <header>
-                <h1>Dmitrii Pimkin</h1>
-                <p>Designer · UI · 3D · Motion</p>
-            </header>
-            <!--  <section class="about">
-                <p>2D/3D animation, motion graphics, and product design
-                    for broadcast, VR/360° video, and digital platforms.</p>
-            </section>
-            <section class="skills">
-                <h2>Tools</h2>
-                <ul>
-                    <li>Cinema 4D (Redshift)</li>
-                    <li>Adobe After Effects</li>
-                    <li>Figma</li>
-                </ul>
-            </section> -->
-
-
-            <section class="contact">
-                <h2>Contact</h2>
-                <a href="https://www.linkedin.com/in/dmitriipimkin/" target="_blank">
-                    <img src="assets/linkedin.svg" alt="LinkedIn">
-                </a>
-                <a href="mailto:pimkind@gmail.com">
-                    <img src="assets/email.svg" alt="Email">
-                </a>
-
-
-            </section>
-        </aside>
-        <main class="portfolio">
-            <div class="video-list">
-              
-                <div class="video-item">
-
-                    <video controls loop poster="images/showreel.webp">
-                        <source src="videos/showreel.mp4" type="video/mp4">
-                        <source src="videos/showreel.webm" type="video/webm">
-                    </video>
-                    <!-- <h3>Showreel</h3>
-                    <p>Motion Design Showcase</p> -->
-                </div>
-
-                <!--             <div class="video-item">
-                    <video controls loop poster="images/switch.webp">
-                        <source src="videos/switch.mp4" type="video/mp4">
-                        <source src="videos/switch.webm" type="video/webm">
-                    </video>
-       <h3>Soccer ball switch</h3>
-                    <p>Loop animation</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls loop poster="images/personio.webp">
-                        <source src="videos/personio.mp4" type="video/mp4">
-                        <source src="videos/personio.webm" type="video/webm">
-                    </video>
-                    <h3>Personio</h3>
-                    <p>Logo animation</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls loop poster="images/slice.webp">
-                        <source src="videos/slice.mp4" type="video/mp4">
-                        <source src="videos/slice.webm" type="video/webm">
-                    </video>
-                    <h3>Slice</h3>
-                    <p>Loop animation</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls loop poster="images/mobius.webp">
-                        <source src="videos/mobius.mp4" type="video/mp4">
-                        <source src="videos/mobius.webm" type="video/webm">
-                    </video>
-                    <h3>Möbius chute</h3>
-                    <p>Loop animation</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls loop poster="images/neuronet.webp">
-                        <source src="videos/neuronet.mp4" type="video/mp4">
-                        <source src="videos/neuronet.webm" type="video/webm">
-                    </video>
-                    <h3>Neuronet</h3>
-                    <p>Loop animation</p>
-                </div>
- -->
-
-
-            </div>
-        </main>
-    </div>
-
 </body>
-
 </html>
