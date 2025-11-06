@@ -8,7 +8,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -296,7 +295,7 @@
         /* 3D Section */
         .grid-3d {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr; /* Одна колонка */
             gap: 40px;
         }
 
@@ -310,7 +309,8 @@
 
         .model-container canvas {
             width: 100%;
-            height: 500px;
+            height: auto;
+            aspect-ratio: 16 / 9;
             display: block;
             cursor: grab;
         }
@@ -319,12 +319,8 @@
             cursor: grabbing;
         }
 
-        .model-container h3 {
-            padding: 20px;
-            font-size: 1.3em;
-            color: #ccc;
-            text-align: center;
-            background: rgba(20, 20, 20, 0.9);
+        .model-container canvas:focus {
+            outline: none;
         }
 
         .loader {
@@ -504,10 +500,6 @@
                 padding: 100px 40px 60px;
             }
 
-            .grid-3d {
-                grid-template-columns: 1fr;
-            }
-
             #loop .video-item,
             #ai .video-item {
                 flex: 1 1 100%;
@@ -542,15 +534,10 @@
             section h2 {
                 font-size: 1.6em;
             }
-
-            .model-container canvas {
-                height: 350px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Desktop Sidebar -->
     <aside class="sidebar">
         <header>
             <h1>Dmitrii Pimkin</h1>
@@ -560,7 +547,7 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="#showreel" class="nav-link">Showreel</a></li>
-                <li><a href="#3d" class="nav-link">3D Interactive</a></li>
+                <li><a href="#3d" class="nav-link">3D for Web</a></li>
                 <li><a href="#loop" class="nav-link">Loop Animations</a></li>
                 <li><a href="#ai" class="nav-link">AI Experiments</a></li>
                 <li><a href="#flash" class="nav-link">Flash Banners</a></li>
@@ -578,7 +565,6 @@
         </div>
     </aside>
 
-    <!-- Mobile Header -->
     <header class="mobile-header">
         <div class="mobile-header-content">
             <div>
@@ -596,7 +582,7 @@
     <nav class="mobile-menu">
         <ul class="nav-menu">
             <li><a href="#showreel" class="nav-link" onclick="closeMobileMenu()">Showreel</a></li>
-            <li><a href="#3d" class="nav-link" onclick="closeMobileMenu()">3D Interactive</a></li>
+            <li><a href="#3d" class="nav-link" onclick="closeMobileMenu()">3D for Web</a></li>
             <li><a href="#loop" class="nav-link" onclick="closeMobileMenu()">Loop Animations</a></li>
             <li><a href="#ai" class="nav-link" onclick="closeMobileMenu()">AI Experiments</a></li>
             <li><a href="#flash" class="nav-link" onclick="closeMobileMenu()">Flash Banners</a></li>
@@ -612,9 +598,7 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- Showreel Section -->
         <section id="showreel">
             <h2>Showreel</h2>
             <div class="showreel-container">
@@ -642,24 +626,20 @@
             </div>
         </section>
 
-        <!-- 3D Interactive Section -->
         <section id="3d">
-            <h2>3D Interactive</h2>
+            <h2>3D for Web</h2>
             <div class="grid-3d">
                 <div class="model-container">
                     <div class="loader" id="loader1"></div>
                     <canvas id="canvas1"></canvas>
-                    <h3>Camera</h3>
                 </div>
                 <div class="model-container">
                     <div class="loader" id="loader2"></div>
                     <canvas id="canvas2"></canvas>
-                    <h3>Halloween</h3>
                 </div>
             </div>
         </section>
 
-        <!-- Loop Animations Section -->
         <section id="loop">
             <h2>Loop Animations</h2>
             <div class="video-grid">
@@ -678,7 +658,6 @@
             </div>
         </section>
 
-        <!-- AI Experiments Section -->
         <section id="ai">
             <h2>AI Experiments</h2>
             <div class="video-grid">
@@ -703,7 +682,6 @@
             </div>
         </section>
 
-        <!-- Flash Banners Section -->
         <section id="flash">
             <h2>Flash Banners from Previous Life</h2>
             <div class="video-grid">
@@ -734,8 +712,10 @@
         </section>
     </main>
 
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+
     <script>
         // Mobile Menu Toggle
         function toggleMobileMenu() {
@@ -846,13 +826,13 @@
             e.stopPropagation();
             const rect = this.getBoundingClientRect();
             const percent = (e.clientX - rect.left) / rect.width;
-            flashVideo.currentTime = percent * flashVideo.duration;
+            flashVideo.currentTime = percent * showreelVideo.duration;
         });
 
         // Mute button
         flashMuteBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            flashVideo.muted = !flashVideo.muted;
+            flashVideo.muted = !showreelVideo.muted;
             updateVolumeIcon(flashVideo, flashVolumeIcon);
             flashVolumeSlider.value = flashVideo.muted ? 0 : flashVideo.volume * 100;
         });
@@ -922,121 +902,88 @@
 
         window.addEventListener('scroll', updateActiveNav);
 
-        // 3D Models with Three.js
-        function init3DModel(canvasId, modelPath, withEnvironment, loaderId) {
+        // 3D Models with Babylon.js
+        function initBabylonModel(canvasId, modelPath, loaderId, envPath = null, initialRotationY = 0, yOffset = 0) {
             const canvas = document.getElementById(canvasId);
             const loader = document.getElementById(loaderId);
-            const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x1a1a1a);
+            const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
+            
+            const scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color4(0, 0, 0, 1.0); 
 
-            const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-            camera.position.set(0, 0, 5);
+            const initialAlpha = -Math.PI / 2;
+            const initialBeta = Math.PI / 2.8; 
+            const initialRadius = 3; 
 
-            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.outputEncoding = THREE.sRGBEncoding;
-            renderer.toneMapping = THREE.ACESFilmicToneMapping;
-            renderer.toneMappingExposure = 1;
+            const camera = new BABYLON.ArcRotateCamera("camera", initialAlpha, initialBeta, initialRadius, BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, true);
+            
+            camera.wheelPrecision = 50; 
+            camera.minZ = 0.1;
+            camera.panningSensibility = 0; 
+            camera.inertia = 0.95; 
+            camera.lowerRadiusLimit = 1.5;
 
-            // Lighting
-            if (withEnvironment) {
-                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-                scene.add(ambientLight);
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-                directionalLight.position.set(5, 5, 5);
-                scene.add(directionalLight);
+            if (envPath) {
+                const environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData(envPath, scene);
+                scene.environmentTexture = environmentTexture;
+                const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
+                light.intensity = 0.5;
+            } else {
+                // Свет для halloween.glb по-прежнему отсутствует
             }
 
-            let model;
-            let isDragging = false;
-            let previousMouseX = 0;
-            let rotationVelocity = 0;
-            const autoRotationSpeed = 0.01; // 36 degrees/sec = ~0.628 rad/sec = 0.01 rad/frame at 60fps
+            let modelContainer; 
+            const autoRotationSpeed = 0.01; 
 
-            // Load GLB Model
-            const gltfLoader = new THREE.GLTFLoader();
-            gltfLoader.load(
-                modelPath,
-                function(gltf) {
-                    model = gltf.scene;
+            BABYLON.SceneLoader.LoadAssetContainerAsync("", modelPath, scene)
+                .then((container) => {
+                    container.addAllToScene();
+                    modelContainer = container.meshes[0];
                     
-                    // Center and scale model
-                    const box = new THREE.Box3().setFromObject(model);
-                    const center = box.getCenter(new THREE.Vector3());
-                    const size = box.getSize(new THREE.Vector3());
+                    modelContainer.rotation.y = initialRotationY;
+
+                    const boundingInfo = modelContainer.getHierarchyBoundingVectors();
+                    const size = boundingInfo.max.subtract(boundingInfo.min);
                     const maxDim = Math.max(size.x, size.y, size.z);
-                    const scale = 3 / maxDim;
-                    model.scale.multiplyScalar(scale);
-                    model.position.sub(center.multiplyScalar(scale));
+                    const scale = 3 / maxDim; 
                     
-                    scene.add(model);
+                    modelContainer.scaling.scaleInPlace(scale);
+                    
+                    const center = boundingInfo.min.add(size.scale(0.5));
+                    modelContainer.position.subtractInPlace(center.scale(scale));
+
+                    modelContainer.position.y += yOffset;
+
+                    camera.setTarget(modelContainer.position);
+                    
                     loader.style.display = 'none';
                     ym(98334525, 'reachGoal', '3d_model_loaded_' + canvasId);
-                },
-                function(xhr) {
-                    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-                },
-                function(error) {
+                })
+                .catch((error) => {
                     console.error('Error loading model:', error);
                     loader.innerHTML = 'Error loading model';
+                });
+
+            // *** ИЗМЕНЕНИЕ 2: Исправленная логика авто-вращения ***
+            // Вращаем модель БЕЗУСЛОВНО.
+            scene.onBeforeRenderObservable.add(() => {
+                if (modelContainer) { 
+                    modelContainer.rotation.y += autoRotationSpeed;
                 }
-            );
+            });
 
-            // Mouse/Touch Controls
-            canvas.addEventListener('mousedown', onPointerDown);
-            canvas.addEventListener('touchstart', onPointerDown);
-            
-            function onPointerDown(e) {
-                isDragging = true;
-                previousMouseX = e.clientX || e.touches[0].clientX;
-                rotationVelocity = 0;
-            }
+            // Блокировка скролла страницы (оставлена)
+            canvas.addEventListener('wheel', (event) => {
+                event.preventDefault();
+            }, { passive: false }); 
 
-            window.addEventListener('mousemove', onPointerMove);
-            window.addEventListener('touchmove', onPointerMove);
-            
-            function onPointerMove(e) {
-                if (!isDragging || !model) return;
-                const clientX = e.clientX || e.touches[0].clientX;
-                const deltaX = clientX - previousMouseX;
-                rotationVelocity = deltaX * 0.01;
-                model.rotation.y += rotationVelocity;
-                previousMouseX = clientX;
-            }
+            engine.runRenderLoop(function () {
+                scene.render();
+            });
 
-            window.addEventListener('mouseup', onPointerUp);
-            window.addEventListener('touchend', onPointerUp);
-            
-            function onPointerUp() {
-                isDragging = false;
-            }
-
-            // Animation Loop
-            function animate() {
-                requestAnimationFrame(animate);
-                
-                if (model) {
-                    if (!isDragging) {
-                        // Auto rotation when not dragging
-                        model.rotation.y += autoRotationSpeed;
-                        // Damping for smooth stop after drag
-                        rotationVelocity *= 0.95;
-                        if (Math.abs(rotationVelocity) > 0.001) {
-                            model.rotation.y += rotationVelocity;
-                        }
-                    }
-                }
-                
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            // Responsive
-            window.addEventListener('resize', function() {
-                camera.aspect = canvas.clientWidth / canvas.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            window.addEventListener('resize', function () {
+                engine.resize();
             });
         }
 
@@ -1044,8 +991,9 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.id === '3d') {
-                    init3DModel('canvas1', '3d/camera.glb', true, 'loader1');
-                    init3DModel('canvas2', '3d/halloween.glb', false, 'loader2');
+                    // *** ИЗМЕНЕНИЕ 4: Поворот 180 (Math.PI) и смещение -1.0 ***
+                    initBabylonModel('canvas1', '3d/camera.glb', 'loader1', 'https://assets.babylonjs.com/environments/sanGiuseppeBridge.env');
+                    initBabylonModel('canvas2', '3d/halloween.glb', 'loader2', null, 0, 0);
                     observer.unobserve(entry.target);
                 }
             });
