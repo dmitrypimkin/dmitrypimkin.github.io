@@ -466,8 +466,15 @@
             position: relative;
             width: 100%;
             max-width: var(--media-width);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-canvas-wrapper {
+            position: relative;
+            width: 100%;
             aspect-ratio: 16/9;
-            overflow: hidden;
+            background: var(--bg-dark);
         }
 
         .model-container canvas {
@@ -497,16 +504,13 @@
         }
 
         .model-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             padding: 20px 25px;
             background: var(--bg-primary);
             border-top: var(--border-thick) solid var(--border-color);
             font-family: var(--font-heading);
             font-size: 1.2em;
             font-weight: 500;
+            width: 100%;
         }
 
         .loop-section {
@@ -939,20 +943,26 @@
             </div>
             <div class="grid-3d">
                 <div class="model-container">
-                    <div class="loader" id="loader1">0%</div>
-                    <canvas id="canvas1"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader1">0%</div>
+                        <canvas id="canvas1"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
 
                 <div class="model-container">
-                    <div class="loader" id="loader2">0%</div>
-                    <canvas id="canvas2"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader2">0%</div>
+                        <canvas id="canvas2"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
 
                 <div class="model-container">
-                    <div class="loader" id="loader3">0%</div>
-                    <canvas id="canvas3"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader3">0%</div>
+                        <canvas id="canvas3"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
             </div>
@@ -1215,7 +1225,7 @@
             initBabylonModel('canvas2', '3d/halloween.glb', 'loader2', null, 0, -2.0);
             initBabylonModel('canvas3', '3d/camera.glb', 'loader3', 'https://assets.babylonjs.com/environments/sanGiuseppeBridge.env');
 
-            document.querySelectorAll('video').forEach(video => {
+            document.querySelectorAll('.video-item video').forEach(video => {
                 video.play().catch(() => {
                     window.addEventListener('touchstart', () => {
                         video.play();
