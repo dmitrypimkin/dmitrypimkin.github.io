@@ -9,7 +9,7 @@
     <meta name="keywords" content="motion design, 3D, UI design, AI, graphic design, portfolio">
     <meta name="author" content="Dmitrii Pimkin">
 
-    <script type="text/javascript" nonce="af7019c24f084b4b8fcd930a90a" src="//local.adguard.org?ts=1794398976860&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgxiYXJkX3N0b3JhZ2USUBINcmVzcG9uc2VfZGF0YRo_CjAyZmU1YTlmZDNkZWQ3ZjI3MDAwNjVmZmYyNTJmMWY3MDA3MDJmZjg0NjYwZDllYzUSCxIHEJLC9-2pDxgB%26filename%3Dindex.html%26opi%3D103135050&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="af7019c24f084b4b8fcd930a90a" src="//local.adguard.org?ts=1794398976860&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;name=Web%20of%20Trust&amp;type=user-script"></script><link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <title>Dmitrii Pimkin - Designer · UI · 3D · Motion</title>
 
@@ -463,14 +463,22 @@
             background: var(--bg-primary);
             border: var(--border-thick) solid var(--border-color);
             box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);
-            position: relative;
             width: 100%;
             max-width: var(--media-width);
-            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
-        .model-container canvas {
+        .model-canvas-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--bg-dark);
+        }
+
+        .model-canvas-wrapper canvas {
             width: 100%;
             height: 100%;
             display: block;
@@ -478,7 +486,7 @@
             outline: none;
         }
 
-        .model-container canvas:active {
+        .model-canvas-wrapper canvas:active {
             cursor: grabbing;
         }
 
@@ -497,10 +505,6 @@
         }
 
         .model-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             padding: 20px 25px;
             background: var(--bg-primary);
             border-top: var(--border-thick) solid var(--border-color);
@@ -727,6 +731,7 @@
         }
 
         @media (max-width: 1600px) {
+
             .model-container,
             .video-item,
             .showreel-container {
@@ -938,20 +943,26 @@
             </div>
             <div class="grid-3d">
                 <div class="model-container">
-                    <div class="loader" id="loader1">0%</div>
-                    <canvas id="canvas1"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader1">0%</div>
+                        <canvas id="canvas1"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
 
                 <div class="model-container">
-                    <div class="loader" id="loader2">0%</div>
-                    <canvas id="canvas2"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader2">0%</div>
+                        <canvas id="canvas2"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
 
                 <div class="model-container">
-                    <div class="loader" id="loader3">0%</div>
-                    <canvas id="canvas3"></canvas>
+                    <div class="model-canvas-wrapper">
+                        <div class="loader" id="loader3">0%</div>
+                        <canvas id="canvas3"></canvas>
+                    </div>
                     <div class="model-caption">Interactive 3D Model — Drag to rotate</div>
                 </div>
             </div>
@@ -1003,7 +1014,7 @@
 
                 <div class="video-item">
                     <video loop muted autoplay playsinline poster="images/gallery.webp">
-                        <source src="videos/gallery.webp" type="video/webm">
+                        <source src="videos/gallery.webm" type="video/webm">
                         <source src="videos/gallery.mp4" type="video/mp4">
                     </video>
                     <div class="video-caption">Gallery</div>
